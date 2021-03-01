@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const {
-    mostrarArticulos,
-    buscarArticulos,
-    publicarArticulo,
-    actualizarArticulos,
-    eliminarArticulos,
-    verArticulosPorUsuario
+    showProducts,
+    searchProduct,
+    publishProduct,
+    updateProduct,
+    deleteProduct,
+    seeProductsByUser
 } = require('../controllers/products');
 
-router.get('/', mostrarArticulos);
-router.get('/:id', buscarArticulos);
-router.get('/:idUser', verArticulosPorUsuario);
-router.post('/', publicarArticulo);
-router.put('/:id', actualizarArticulos);
-router.delete('/:id', eliminarArticulos);
+router.get('/showproduct', showProducts);
+router.get('/search/:title', searchProduct);
+router.get('/publish', publishProduct);
+router.post('/update/id', updateProduct);
+router.put('/delete/id', deleteProduct);
+router.delete('/byuser', seeProductsByUser);
 
 module.exports = router;

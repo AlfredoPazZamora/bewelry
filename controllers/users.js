@@ -6,8 +6,14 @@ function verDatosPersonales(req, res){};
 
 function actualizarDatosPersonales(req, res){}
 
+function registrarUsuario(req, res){};
+
+function eliminarCuenta(req, res){};
+
 module.exports = {
     verDatosPersonales,
-    actualizarDatosPersonales
+    actualizarDatosPersonales,
+    registrarUsuario,
+    eliminarCuenta
 };
 

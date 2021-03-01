@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Rutas
-
+app.use('/v1', require('./routes'));
 
 //Manejando los errores
 app.use((req, res, next) => {

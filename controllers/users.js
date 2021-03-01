@@ -2,18 +2,32 @@
 const User = require('../models/User');
 
 //Funcionalidades
-function verDatosPersonales(req, res){};
+function showInformation(req, res){
+    var user1 = new User(1, 'Juan Lopez', 'juan12', '13-04-1995','juan@mail.com',12345)
+    var user2 = new User(2, 'Monserrat Perez', 'monse13', '18-04-1995','monse@mail.com',12345)
+  res.send([user1, user2])
+};
 
-function actualizarDatosPersonales(req, res){}
+function updateInformation(req, res){
+    var user1 = new Usuario(req.params.id, 'Juan Lopez', 'juan13', '13-04-1995','juan@mail.com',12345))
+    var updates = req.body
+    user1 = { ...user1, ...updates }
+    res.send(user1)
+}
 
-function registrarUsuario(req, res){};
+function createUser(req, res){
+    var user1 = new Usuario(req.body)
+    res.status(201).send(user1)
+};
 
-function eliminarCuenta(req, res){};
+function deleteUser(req, res){
+    res.status(200).send('Usuario ${req.params.id} eliminado');
+};
 
 module.exports = {
-    verDatosPersonales,
-    actualizarDatosPersonales,
-    registrarUsuario,
-    eliminarCuenta
+    showInformation,
+    updateInformation,
+    createUser,
+    deleteUser
 };
 
